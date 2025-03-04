@@ -9,4 +9,5 @@ Netowrk traffic logged to `network_logs`
 Usage:
 
 `docker build -t untrusted-app .`
+
 `./run.sh bash`
