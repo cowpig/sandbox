@@ -1,6 +1,6 @@
-# Docker setup for running an untrusted application in ubuntu
+# Ubuntu Sandbox
 
-Put a CLI I'm not familiar with in untrusted_app folder
+This is a docker setup for running an untrusted application in ubuntu
 
 The home dir will be persisted in `container_home`
 
