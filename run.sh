@@ -7,7 +7,7 @@ mkdir -p container_home
 
 # Run the container with persistent home directory
 docker run -it --rm \
-  --name untrusted-app \
+  --name sandbox \
   --net=host \
   --volume /tmp/.X11-unix:/tmp/.X11-unix \
   --volume /run/user/$(id -u)/pulse:/tmp/pulse:ro \

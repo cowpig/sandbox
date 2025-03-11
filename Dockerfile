@@ -3,6 +3,7 @@ FROM ubuntu:22.04
 
 # Install essential dependencies
 RUN apt-get update && apt-get install -y \
+    git \
     pulseaudio \
     x11-apps \
     xauth \
@@ -20,11 +21,13 @@ RUN apt-get update && apt-get install -y \
     xz-utils \
     unzip \
     tar \
+    sudo \
     --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a non-root user
+# Create a non-root user with passwordless sudo
 RUN useradd -m appuser && \
+    echo "appuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
     mkdir -p /home/appuser/.local/bin && \
     echo 'export PATH="/home/appuser/.local/bin:$PATH"' >> /home/appuser/.bashrc && \
     chown -R appuser:appuser /home/appuser
